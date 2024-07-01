@@ -1,5 +1,3 @@
-// Using Wizard Orpheus JS library to make this AI game
-
 var myGame = new WizardOrpheus('', `You're a trader trying to sell your product. You don't have a lot of customers, so you want to keep your customers but also try to sell your product at a good price.`);
 
 myGame.createUserAction({
@@ -17,12 +15,23 @@ document.getElementById('submit-button').addEventListener('click', function() {
 
     myGame.message(userMessage);
 
-    document.getElementById('conversation').innerHTML += '<p>' + userInput + '</p>';
-    document.getElementById('product-input').value = '';
-    document.getElementById('price-input').value = '';
-    document.getElementById('user-input').value = '';
+    addMessageToChat('user', userInput);
+    clearInputs();
 });
 
 myGame.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
-    document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p><hr>';
+    addMessageToChat('bot', data.message);
 });
+
+function addMessageToChat(sender, message) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message', sender);
+    messageElement.innerText = message;
+    document.getElementById('messages').appendChild(messageElement);
+}
+
+function clearInputs() {
+    document.getElementById('product-input').value = '';
+    document.getElementById('price-input').value = '';
+    document.getElementById('user-input').value = '';
+}

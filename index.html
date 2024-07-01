@@ -7,18 +7,20 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <p>Trader</p>
-
-  <input type="text" id="product-input" placeholder="Enter product name"><br><br>
-  <input type="text" id="price-input" placeholder="Enter price"><br><br>
-  <input type="text" id="user-input" placeholder="Type your message..."><br><br>
-  <button id="submit-button">Send</button>
-  <br><br>
-  <i>Press the button to submit!</i>
-  <div id="conversation">
-    <hr>
+  <div class="container">
+    <div class="chat-header">
+      <h2>Trader Bot</h2>
+    </div>
+    <div id="conversation" class="chat-window">
+      <div id="messages"></div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="product-input" placeholder="Enter product name">
+      <input type="text" id="price-input" placeholder="Enter price">
+      <input type="text" id="user-input" placeholder="Type your message...">
+      <button id="submit-button">Send</button>
+    </div>
   </div>
-  
   <script src="https://wizard-orpheus.hackclub.dev/wizard_orpheus.js"></script>
   <script src="script.js"></script>
 </body>
