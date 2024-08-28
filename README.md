@@ -1,3 +1,4 @@
+Fork and run replit
 Build a UI interface that allow the user to practice negotiation or for the seller to sell their product better
 
 ![image](https://github.com/GaoYeGithub/TraderBot/assets/152664000/fbdcad0b-0620-4aef-8976-fdaa4da9f175)
